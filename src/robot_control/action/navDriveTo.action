@@ -1,0 +1,8 @@
+float32 posx
+float32 posy
+bool docking
+bool backup
+---
+bool success
+---
+float32 progress

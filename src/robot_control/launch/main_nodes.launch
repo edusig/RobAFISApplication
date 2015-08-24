@@ -1,0 +1,12 @@
+<launch>
+
+	<node pkg="robot_control" type="base_driver" name="BaseDriver" output="screen"/>
+	<node pkg="robot_control" type="control" name="Control" output="screen"/>
+	<node pkg="robot_control" type="deliberative_navigation" name="DeliberativeNavigation" output="screen"/>
+	<node pkg="robot_control" type="grid_mapping" name="GridMapping" output="screen"/>
+	<node pkg="robot_control" type="localization" name="Localization" output="screen"/>
+	<node pkg="robot_control" type="product_manipulation" name="ProductManipulation" output="screen"/>
+	<node pkg="robot_control" type="path_planning" name="PathPlanning" output="screen"/>
+	<node pkg="robot_control" type="transport_agent" name="TransportAgent" output="screen"/>
+
+</launch>

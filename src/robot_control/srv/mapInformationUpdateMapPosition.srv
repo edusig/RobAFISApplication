@@ -1,0 +1,4 @@
+uint16 index
+float32 value
+---
+bool success

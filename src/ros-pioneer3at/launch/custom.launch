@@ -1,0 +1,41 @@
+<launch>
+
+	<arg name="model" />
+
+	<!-- 
+		
+		GAZEBO BRIDGE CORE 
+
+	-->
+	<node pkg="pioneer3at" type="gazebo_bridge" name="Pioneer3AT_Gazebo" >	
+	  <param name="ros_odom_frame"          type="str"    value="Pioneer3AT/odom" />
+	  <param name="ros_child_frame"         type="str"    value="Pioneer3AT/base_link" />
+	  <param name="ros_odom_tf_future_date" type="double" value="0.05" />
+	  <param name="ros_cmd_vel_frame" type="str" value="cmd_vel"/>
+	  
+	  <param name="gz_model_name"     type="str" value="$(arg model)" />
+	  <param name="gz_pose_topic"     type="str" value="~/pose/info" />
+	  <param name="gz_cmd_vel_topic"  type="str" value="~/$(arg model)/vel_cmd" />
+	  
+		<remap from="odom"    to="Pioneer3AT/pose" />
+		<remap from="cmd_vel" to="Pioneer3AT/cmd_vel" />
+	</node>	
+
+
+	<!-- 
+	
+		GAZEBO LASER 
+
+	-->
+	<node pkg="pioneer3at" type="gazebo_laserscan" name="Pioneer3AT_laserscan" >
+	  <param name="ros_laserscan_frame" type="str" value="Pioneer3AT/laserscan" />
+	  <param name="gz_laserscan_topic" type="str" value="~/$(arg model)/hokuyo/link/laser/scan" />
+	  
+	  <remap from="scan" to="Pioneer3AT/laserscan" />
+	</node>
+	
+	<!-- publish static transform from the center of the robot to the laser rangefinder (required for slam_gmapping) -->
+	<node pkg="tf" type="static_transform_publisher" name="Pioneer3AT_laserscan_tf" args="0.2 0 0.35 0 0 0 Pioneer3AT/base_link Pioneer3AT/laserscan 33" />
+	
+
+</launch>

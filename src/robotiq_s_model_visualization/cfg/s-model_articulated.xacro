@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+
+<!-- 
+s-model_articulated - articulated version of the robotiq s-model,
+3 fingered gripper.                                                
+-->
+<robot name="s-model_articulated" xmlns:xacro="http://ros.org/wiki/xacro">
+
+	<xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_articulated_macro.xacro" />
+	<xacro:s-model_articulated prefix="l_"/>
+
+  <gazebo>
+    <!-- plugin for left RobotiQ hand -->
+    <plugin name="robotiq_hand_plugin" filename="libRobotiqHandPlugin.so">
+      <side>left</side>
+      <kp_position>10.0</kp_position>
+      <kd_position>0.5</kd_position>
+      <robotNamespace></robotNamespace>
+    </plugin>
+  </gazebo>
+<!--
+	<xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_finger_articulated_macro.xacro" />
+	<xacro:s-model_finger_articulated prefix=""/>
+-->
+</robot>
+

@@ -1,0 +1,7 @@
+float32 posx
+float32 posy
+float32 gripperDistance
+---
+bool success
+---
+float32 progress

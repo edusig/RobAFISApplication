@@ -1,0 +1,8 @@
+uint8 beginx
+uint8 beginy
+uint8 endx
+uint8 endy
+float32[] map
+---
+float32[] xpath
+float32[] ypath

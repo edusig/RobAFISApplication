@@ -1,0 +1,18 @@
+<launch>  
+
+
+	<!--<include file="$(find robot_control)/launch/robot_control.launch" />-->
+	
+
+	<node pkg="pioneer3at" type="bashim" name="gazebo_server" 
+	      args="gzserver $(find robot_control)/world/arena.world"/>
+	      
+	<!-- Configure this launch file for your hardware setup -->
+	<include file="$(find pioneer3at)/launch/hardware.launch" />
+	<!-- Launch Applications -->
+	<include file="$(find pioneer3at)/launch/apps/navigation.launch" />
+
+	<!-- Launch Visualization  -->
+	<include file="$(find pioneer3at)/launch/ui.launch" />
+
+</launch>

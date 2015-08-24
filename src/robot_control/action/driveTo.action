@@ -1,0 +1,8 @@
+float32 posx
+float32 posy
+bool picking
+bool releasing
+---
+bool success
+---
+float32 progress
