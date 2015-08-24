@@ -1,0 +1,5 @@
+uint8 mapx
+uint8 mapy
+---
+float32 posx
+float32 posy

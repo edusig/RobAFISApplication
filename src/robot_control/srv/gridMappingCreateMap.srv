@@ -1,0 +1,10 @@
+float32 posx
+float32 posy
+float32 posz
+float32 orientation
+float32 cellsize
+float32 width
+float32 height
+---
+float32[] map
+uint32 size

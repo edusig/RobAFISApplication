@@ -1,0 +1,54 @@
+<launch>
+
+	<param name="use_sim_time" value="true"/>
+
+	<!-- 
+	
+		ROBAFIS APPLICATION 
+	
+	-->
+	<node pkg="robot_control" type="application" name="Application" output="screen"/>
+	<node pkg="robot_control" type="map_information" name="MapInformation" output="screen"/>
+
+
+	<!--
+
+		GAZEBO ROBOT CONTROLLER
+
+	-->
+	<group ns="robot1">
+		
+		<!-- GAZEBO BRIDGE CONTROLLERS -->
+		<include file="$(find pioneer3at)/launch/custom.launch">
+			<arg name="model" value="Pioneer3AT" />
+		</include>
+		
+		<!-- APPLICATION ROBOT CONTROLLERS -->
+		<include file="$(find robot_control)/launch/main_nodes.launch" />
+
+	</group>
+
+	<group ns="robot2">
+		
+		<!-- GAZEBO BRIDGE CONTROLLERS -->
+		<include file="$(find pioneer3at)/launch/custom.launch">
+			<arg name="model" value="Pioneer3AT2" />
+		</include>
+
+		<!-- APPLICATION ROBOT CONTROLLERS -->
+		<include file="$(find robot_control)/launch/main_nodes.launch" />
+
+	</group>
+
+	<!--
+
+		GAZEBO
+
+	-->
+	
+ <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" default="$(find robot_control)/world/arena.world"/>
+    <arg name="paused" value="false"/>
+  </include>
+
+</launch>

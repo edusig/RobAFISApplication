@@ -1,0 +1,9 @@
+*.[oa]
+*.cmake
+*.make
+build/
+devel/
+.floo
+.flooignore
+*.TODO
+*.sublime-project

@@ -1,0 +1,7 @@
+float32 posx
+float32 posy
+bool rightWall
+---
+bool success
+---
+float32 progress

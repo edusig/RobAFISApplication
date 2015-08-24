@@ -1,0 +1,9 @@
+float32 posx
+float32 posy
+bool robot1
+---
+bool success
+bool robot1
+---
+float32 progress
+bool robot1

@@ -1,0 +1,4 @@
+float32 goalx
+float32 goaly
+---
+float32 distance

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <name>robot_control</name>
+  <version>0.0.1</version>
+  <description>The robot_control package</description>
+
+  <maintainer email="eduardo.ciciliato@gmail.com">Eduardo Sigrist Ciciliato</maintainer>
+  <license>GPLv2</license>
+  <url type="repository">https://github.com/edusig/stock_transport</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>actionlib</build_depend>
+  <build_depend>actionlib_msgs</build_depend>
+  <run_depend>message_runtime</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>actionlib</run_depend>
+  <run_depend>actionlib_msgs</run_depend>
+  <!--   <test_depend>gtest</test_depend> -->
+
+  <export></export>
+</package>

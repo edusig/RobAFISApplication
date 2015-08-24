@@ -1,0 +1,6 @@
+float32 posx
+float32 posy
+---
+bool success
+---
+float32 progress
