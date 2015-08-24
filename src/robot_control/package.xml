@@ -6,7 +6,7 @@
 
   <maintainer email="eduardo.ciciliato@gmail.com">Eduardo Sigrist Ciciliato</maintainer>
   <license>GPLv2</license>
-  <url type="repository">https://github.com/edusig/stock_transport.git</url>
+  <url type="repository">https://github.com/edusig/RobAFISApplication.git</url>
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>message_generation</build_depend>

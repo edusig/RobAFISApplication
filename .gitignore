@@ -7,3 +7,4 @@ devel/
 .flooignore
 *.TODO
 *.sublime-project
+*.sublime-workspace
