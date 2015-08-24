@@ -1,2 +1,2 @@
-# stock_transport
-Stock transporting robotic application using two pioneers
+# RobAFISApplication
+Stock transporting robotic application controlling two pioneers 3AT
