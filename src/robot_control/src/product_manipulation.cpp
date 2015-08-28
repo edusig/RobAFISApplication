@@ -6,12 +6,12 @@ ProductManipulation::ProductManipulation(ros::NodeHandle n){
 	//Create a Publisher to Gripper Command Topic
 	gripperCommand = node.advertise<robotiq_s_model_articulated_msgs::SModelRobotOutput>(GRIPPERCOMMAND, 1000);
 	//Create a Publisher to Gripper Slider Command Topic
-	sliderCommand = node.advertise<gripper_slider_msg::SliderCommand>(GRIPPERSLIDERCOMMAND, 1000);
+	//sliderCommand = node.advertise<gripper_slider_msg::SliderCommand>(GRIPPERSLIDERCOMMAND, 1000);
 
 	//Subscribe to Gripper Status
 	gripperState = node.subscribe(GRIPPERSTATE, 100, &ProductManipulation::gripperStateHandler, this);
 	//Subscribe to Gripper Slider Status
-	sliderState = node.subscribe(GRIPPERSLIDERSTATE, 100, &ProductManipulation::gripperSliderStateHandler, this);
+	//sliderState = node.subscribe(GRIPPERSLIDERSTATE, 100, &ProductManipulation::gripperSliderStateHandler, this);
 
 	//Advertise Controls
 	advertiseGrasp = node.advertiseService(PRODUCTMANIPULATIONGRASP, &ProductManipulation::graspObject, this);
@@ -57,11 +57,12 @@ void ProductManipulation::gripperStateHandler(const robotiq_s_model_articulated_
 
 }
 
+/*
 void ProductManipulation::gripperSliderStateHandler(const gripper_slider_msg::SliderState::ConstPtr& state){
 	sliderStatus = state->moving;
 	sliderResult = state->success;
 }
-
+*/
 //Helper Functions to control the gripper
 
 //Gripper Initialization
@@ -122,6 +123,7 @@ bool ProductManipulation::gripperRelease(){
 }
 
 //Gripepr custom slider Raise and Lower
+/*
 bool ProductManipulation::gripperRaise(){
 	sliderCommandMsg.raise = true;
 	sliderCommand.publish(sliderCommandMsg);
@@ -131,7 +133,7 @@ bool ProductManipulation::gripperLower(){
 	sliderCommandMsg.raise = false;
 	sliderCommand.publish(sliderCommandMsg);
 }
-
+*/
 /*
 *
 *

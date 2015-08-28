@@ -4,7 +4,6 @@
 #include "robot_control/createMapAction.h"
 //Client Service
 #include "robot_control/robAFISApplicationTransportProduct.h"
-#include "robot_control/robAFISApplicationCreateMap.h"
 
 typedef actionlib::SimpleActionClient<robot_control::createMapAction> createMapClient;
 
