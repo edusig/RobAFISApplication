@@ -18,15 +18,17 @@ Follow the installation process on ROS Wiki,
 Some packages needed to run the application
 
 ```
-sudo apt-get install ros-indigo-urdf ros-indigo-tf ros-indigo-gazebo4-plugins ros-indigo-control-msgs
+sudo apt-get install ros-indigo-urdf ros-indigo-tf ros-indigo-gazebo-plugins ros-indigo-control-msgs
 ```
 
 ###Install Gazebo
 
-Install Gazebo 4.
+Install Gazebo 4, them its plugins.
 
 ```
 wget -O /tmp/gazebo4_install.sh http://osrf-distributions.s3.amazonaws.com/gazebo/gazebo4_install.sh; sudo sh /tmp/gazebo4_install.sh
+
+sudo apt-get install ros-indigo-gazebo4-plugins
 ```
 
 ###Create a Workspace
@@ -42,10 +44,12 @@ Make sure the ownership of your workspace folder is attributed to the user that 
 Clone this repository anywhere, then move the src to your workspace src and the product model to your gazebo folder
 
 ```
+cd ~
 git clone https://github.com/edusig/RobAFISApplication.git
 cd RobAFISApplication
 mv src/* ~/catkin_ws/src
-cp product ~/.gazebo/models/
+mkdir ~/.gazebo/models
+cp -r product ~/.gazebo/models/
 cd ..
 rm -rfv RobAFISApplication
 ```
@@ -70,11 +74,13 @@ roscore
 Just run this while inside your workspace (~/catkin_ws/).
 
 ```
+cd ~/catkin_ws
 roslaunch src/robot_control/launch/master.launch
 ```
 
 Then in another terminal.
 
 ```
+cd ~/catkin_ws
 rosrun robot_control operation
 ```
