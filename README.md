@@ -29,6 +29,8 @@ Install Gazebo 4, them its plugins.
 wget -O /tmp/gazebo4_install.sh http://osrf-distributions.s3.amazonaws.com/gazebo/gazebo4_install.sh; sudo sh /tmp/gazebo4_install.sh
 
 sudo apt-get install ros-indigo-gazebo4-plugins
+
+gazebo
 ```
 
 ###Create a Workspace
@@ -39,6 +41,10 @@ Follow the first tutorial from ros wiki tutorials.
 
 Make sure the ownership of your workspace folder is attributed to the user that installed ROS when executing `catking_init_workspace`.
 
+```
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+```
+
 ###Clone RobAFISApplication
 
 Clone this repository anywhere, then move the src to your workspace src and the product model to your gazebo folder
@@ -48,7 +54,7 @@ cd ~
 git clone https://github.com/edusig/RobAFISApplication.git
 cd RobAFISApplication
 mv src/* ~/catkin_ws/src
-mkdir ~/.gazebo/models
+mkdir -p ~/.gazebo/models
 cp -r product ~/.gazebo/models/
 cd ..
 rm -rfv RobAFISApplication
