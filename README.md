@@ -1,19 +1,19 @@
-#RobAFISApplication
+# RobAFISApplication
 Stock transporting robotic application using two pioneers
 
-##Installation
+## Installation
 
-###Install Ubuntu
+### Install Ubuntu
 
 Ros Indigo supports Ubuntu [Saucy (13.10)]() and [Trusty (14.04)](http://releases.ubuntu.com/14.04/).
 
 For more supported OSs check [Ros Wiki - Indigo Installation](http://wiki.ros.org/indigo/Installation)
 
-###Install ROS
+### Install ROS
 Follow the installation process on ROS Wiki, 
 [Indigo installation on Ubuntu](http://wiki.ros.org/indigo/Installation/Ubuntu)
 
-###Install other needed packages
+### Install other needed packages
 
 Some packages needed to run the application
 
@@ -21,7 +21,7 @@ Some packages needed to run the application
 sudo apt-get install ros-indigo-urdf ros-indigo-tf ros-indigo-gazebo-plugins ros-indigo-control-msgs
 ```
 
-###Install Gazebo
+### Install Gazebo
 
 Install Gazebo 4, them its plugins.
 
@@ -33,7 +33,7 @@ sudo apt-get install ros-indigo-gazebo4-plugins
 gazebo
 ```
 
-###Create a Workspace
+### Create a Workspace
 
 Follow the first tutorial from ros wiki tutorials.
 
@@ -45,7 +45,7 @@ Make sure the ownership of your workspace folder is attributed to the user that 
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 ```
 
-###Clone RobAFISApplication
+### Clone RobAFISApplication
 
 Clone this repository anywhere, then move the src to your workspace src and the product model to your gazebo folder
 
@@ -60,7 +60,7 @@ cd ..
 rm -rfv RobAFISApplication
 ```
 
-###Run catkin_make once
+### Run catkin_make once
 
 Try compiling the program and verify id everything is working fine.
 
@@ -69,7 +69,7 @@ cd ~/catkin_ws
 catkin_make
 ```
 
-##Usage
+## Usage
 
 To execute everything we will need three terminal tabs. One will run rosore, the second will run most nodes and gazebo simulator and the third will run the operation node that sends commands to the application.
 
